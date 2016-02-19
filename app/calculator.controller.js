@@ -1,6 +1,6 @@
-angular.module('calculatorApp', []).controller('CalculatorController', function CalculatorController($scope) {
-  $scope.z = 0;
-  $scope.sum = function() {
-    $scope.z = $scope.x + $scope.y;
-  };
-});
+export default function CalculatorController($scope) {
+	$scope.total = 0;
+	$scope.increment = function(num) {
+		$scope.total = num === undefined ? $scope.total + 1 : $scope.total + num;
+	}
+}

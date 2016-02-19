@@ -1,27 +1,39 @@
+import expect from 'expect';
+
 describe('calculator', function () {
 
-  beforeEach(module('calculatorApp'));
+  beforeEach(angular.mock.module('calculatorApp'));
 
-  var $controller;
+  let $controller;
 
-  beforeEach(inject(function(_$controller_){
+  beforeEach(angular.mock.inject(function(_$controller_){
     $controller = _$controller_;
   }));
 
-  describe('sum', function () {
-    it('1 + 1 should equal 2', function () {
-      var $scope = {};
-      var controller = $controller('CalculatorController', { $scope: $scope });
-      $scope.x = 1;
-      $scope.y = 2;
-      $scope.sum();
-      expect($scope.z).toBe(3);
+  describe('increment', function () {
+    it('should increment the total by 1 by default', function () {
+      let $scope = {};
+      let controller = $controller('CalculatorController', { $scope: $scope });
+      $scope.total = 0;
+      $scope.increment();
+      expect($scope.total).toBe(1);
     }); 
 
-    it('z should default to zero', function () {
-      var $scope = {};
-      var controller = $controller('CalculatorController', { $scope: $scope });
-      expect($scope.z).toBe(0);
+    it('should increment the total by whatever number is passed to the Increment function', function () {
+      let $scope = {};
+      let controller = $controller('CalculatorController', { $scope: $scope });
+      $scope.total = 0;
+      $scope.increment(5);
+      expect($scope.total).toBe(5);
+    });
+
+    it('should repeatedly increment total every time Increment is called', function () {
+      let $scope = {};
+      let controller = $controller('CalculatorController', { $scope: $scope });
+      $scope.total = 0;
+      $scope.increment(5);
+      $scope.increment();
+      expect($scope.total).toBe(6);
     });
   });
 
