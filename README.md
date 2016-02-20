@@ -19,13 +19,7 @@ query: {
 This is a Babel 6.x update as they move away from only transpiling
 ES6-to-JS.
 
-
-**Babel 5.x Compatible Setup in branch "babel-5"**
-- Babel 5.x (babel-core, babel-loader)
-- Karma 0.13.xx
-
-In both of these setups, ensure that your karma version is 0.13.xx -- as 
-far as I can tell, 0.12.xx doesn't work.
+If you want the Babel 5.x compatible setup, see branch "babel-5".
 
 Features:
 - Karma + Mocha test framework
