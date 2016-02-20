@@ -1,31 +1,10 @@
 This is an extension of Brad's Angular + Karma testing demo.
 
-**Babel 6.0 Compatible Setup in branch "babel-6"**
-- Babel 6.x (babel-core, babel-loader)
-- Babel-preset-es2015
-- Karma 0.13.xx
-
-In webpack + karma's webpack config files, module loaders 
-include a preset param that explicitly looks for es2015. 
-
-```
-...
-query: {
-  presets: ['es2015']
-}
-...
-```
-
-This is a Babel 6.x update as they move away from only transpiling
-ES6-to-JS.
-
-
 **Babel 5.x Compatible Setup in branch "babel-5"**
 - Babel 5.x (babel-core, babel-loader)
 - Karma 0.13.xx
 
-In both of these setups, ensure that your karma version is 0.13.xx -- as 
-far as I can tell, 0.12.xx doesn't work.
+To see a Babel 6.x compatible set up, head on over to the "babel-6" branch.
 
 Features:
 - Karma + Mocha test framework

@@ -15,19 +15,10 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    preLoaders: [
-      { test: /\.js$/, 
-        exclude: /node_modules/, 
-        loader: 'ng-annotate'
-      }
-    ],
     loaders: [
       { test: /\.js$/, 
         exclude: /node_modules/, 
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
+        loaders: ['ng-annotate', 'babel-loader']
       }
     ]
   },
