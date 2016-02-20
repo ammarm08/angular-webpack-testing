@@ -1,13 +1,36 @@
 This is an extension of Brad's Angular + Karma testing demo.
 
-An important source of change to note is in package.json. The setup in this repo currently depends 
-on a 5.xx version of Babel and a 0.13.xx version of Karma. 
-Babel 6.xx paired with earlier versions of Karma lead to the testing framework failing.
+**Babel 6.0 Compatible Setup in branch "babel-6"**
+- Babel 6.x (babel-core, babel-loader)
+- Babel-preset-es2015
+- Karma 0.13.xx
+
+In webpack + karma's webpack config files, module loaders 
+include a preset param that explicitly looks for es2015. 
+
+```
+...
+query: {
+  presets: ['es2015']
+}
+...
+```
+
+This is a Babel 6.x update as they move away from only transpiling
+ES6-to-JS.
+
+
+**Babel 5.x Compatible Setup in branch "babel-5"**
+- Babel 5.x (babel-core, babel-loader)
+- Karma 0.13.xx
+
+In both of these setups, ensure that your karma version is 0.13.xx -- as 
+far as I can tell, 0.12.xx doesn't work.
 
 Features:
-- Karma + Mocha + Expect framework
+- Karma + Mocha test framework
 - Babel: transpiling app, vendor, and test scripts from ES6 to JS
-- Babel 5.xx and Karma 0.13.xx do not conflict with each other
+- Babel (5.x or 6.x) and Karma 0.13.xx do not conflict with each other
 - Bundling app scripts and vendor scripts into separate scripts
 
 Original blog post here: [Getting started with Karma for AngularJS Testing](http://www.bradoncode.com/blog/2015/05/19/karma-angularjs-testing/)
