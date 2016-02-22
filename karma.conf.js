@@ -2,10 +2,8 @@
 module.exports = function(config) {
   config.set({
     basePath: '',
+
     frameworks: ['mocha'],
-    reporters: ['dots'],
-    browsers: ['Chrome'],
-    singleRun: true,
 
     files: [
         './app/vendor.bundle.js',
@@ -14,7 +12,7 @@ module.exports = function(config) {
     ], 
 
     preprocessors: {
-        './tests/tests.bundle.js': ['webpack', 'sourcemap']
+        './tests/tests.bundle.js': ['webpack']
     },
 
     webpack: { 
@@ -30,6 +28,12 @@ module.exports = function(config) {
         resolve: {
             extensions: ['', '.js']
         }
-    }
+    },
+
+
+    reporters: ['dots'],
+    browsers: ['Chrome'],
+    singleRun: true,
+    logLevel: config.LOG_INFO
   });
 }

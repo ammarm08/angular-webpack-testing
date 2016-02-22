@@ -1,7 +1,6 @@
 import expect from 'expect';
 
 describe('calculator', function () {
-
   beforeEach(angular.mock.module('calculatorApp'));
 
   let $controller;
