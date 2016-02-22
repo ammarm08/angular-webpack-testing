@@ -1,4 +1,4 @@
-import expect from 'expect';
+// import expect from 'expect';
 
 describe('calculator', function () {
   beforeEach(angular.mock.module('calculatorApp'));
@@ -15,7 +15,7 @@ describe('calculator', function () {
       let controller = $controller('CalculatorController', { $scope: $scope });
       $scope.total = 0;
       $scope.increment();
-      expect($scope.total).toBe(1);
+      expect($scope.total).to.equal(1);
     }); 
 
     it('should increment the total by whatever number is passed to the Increment function', function () {
@@ -23,7 +23,7 @@ describe('calculator', function () {
       let controller = $controller('CalculatorController', { $scope: $scope });
       $scope.total = 0;
       $scope.increment(5);
-      expect($scope.total).toBe(5);
+      expect($scope.total).to.equal(5);
     });
 
     it('should repeatedly increment total every time Increment is called', function () {
@@ -32,7 +32,7 @@ describe('calculator', function () {
       $scope.total = 0;
       $scope.increment(5);
       $scope.increment();
-      expect($scope.total).toBe(6);
+      expect($scope.total).to.equal(6);
     });
   });
 

@@ -3,7 +3,7 @@ module.exports = function(config) {
   config.set({
     basePath: '',
 
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'chai'],
 
     files: [
         './app/vendor.bundle.js',
@@ -31,7 +31,7 @@ module.exports = function(config) {
     },
 
 
-    reporters: ['dots'],
+    reporters: ['progress'],
     browsers: ['Chrome'],
     singleRun: true,
     logLevel: config.LOG_INFO
